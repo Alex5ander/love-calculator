@@ -13,5 +13,18 @@
     </ion-toolbar>
   </ion-header>
 
+  <form class="form">
+    <ion-label floating >Primeiro nome</ion-label>
+    <ion-input [(ngModel)]="name1" ></ion-input>
+
+    <ion-label floating >Segundo nome</ion-label>
+    <ion-input [(ngModel)]="name2" ></ion-input>
+    
+    <ion-button (click)="calculate()" expand="block">Calcular</ion-button>
+  </form>
+
+  <div>
+
+  </div>
   
 </ion-content>

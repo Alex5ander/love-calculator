@@ -8,12 +8,15 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  name1 = '';
+  name2 = '';
   constructor(private http: HttpClient) {
 
   }
 
-  calculate(name1: string, name2: string) {
-    this.http.get()
+  calculate() {
+    this.http.get('');
+    console.log(1);
   }
 
 }
