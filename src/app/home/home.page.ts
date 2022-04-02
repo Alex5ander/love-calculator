@@ -10,13 +10,25 @@ export class HomePage {
 
   name1 = '';
   name2 = '';
-  constructor(private http: HttpClient) {
+  url = 'http://www.lucasreno.kinghost.net/love-calculator/';
+  percente = 0;
 
-  }
+  buttonClass = 'animated-button';
+  constructor(private http: HttpClient) {}
 
   calculate() {
-    this.http.get('');
-    console.log(1);
+    this.buttonClass='animated-button jump';
+    // this.http.get(this.url+this.name1+'/'+this.name2).subscribe((response: string) => {
+    //   this.percente = parseInt(response, 10);
+    // });
+
+    setTimeout(() => {
+      this.buttonClass='animated-button expand';
+      setTimeout(() => {
+       this.buttonClass='animated-button';
+      }, 900);
+    }, 2000);
+    this.percente = Math.floor(Math.random() * 101);
   }
 
 }
