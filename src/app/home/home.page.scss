@@ -15,7 +15,7 @@
     justify-content: center;
     margin: auto;
 
-    transition: .3s ease-in-out;
+    transition: .2s ease-in-out;
 }
 
 .jump {
@@ -25,7 +25,7 @@
     font-size: 0px;
     padding: 0px;
 
-    animation: .5s infinite .4s jump;
+    animation: .2s infinite .4s jump;
 }
 
 .expand {
@@ -35,7 +35,7 @@
     font-size: 0px;
     padding: 0px;
 
-    animation: .5s ease-in-out .4s expand;
+    animation: .2s ease-in-out .4s expand;
 }
 
 @keyframes jump {
