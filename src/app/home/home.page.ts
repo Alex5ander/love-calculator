@@ -27,7 +27,7 @@ export class HomePage {
       setTimeout(() => {
        this.buttonClass='animated-button';
       }, 1500);
-    }, 1800);
+    }, 1500);
     this.percente = Math.floor(Math.random() * 101);
   }
 
