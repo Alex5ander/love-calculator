@@ -1,11 +1,16 @@
 <ion-content>
-  <div class="container">
-    <ion-label floating >Primeiro nome</ion-label>
-    <ion-input  placeholder="Insira um nome aqui" [(ngModel)]="name1" ></ion-input>
-  
-    <ion-label floating >Segundo nome</ion-label>
-    <ion-input  placeholder="Insira um nome aqui" [(ngModel)]="name2" ></ion-input>
+  <form class="container" [formGroup]="formGroup" (ngSubmit)="calculate()">
+    <label>Primeiro nome</label>
+    <input required placeholder="Insira um nome aqui" formControlName="firstName" />
+
+    <label>Segundo nome</label>
+    <input required placeholder="Insira um nome aqui" formControlName="secondName" />
+
+    <button [class]="buttonClass" type="submit" [disabled]="formGroup.invalid" >Calcular</button>
     
-    <button [class]="buttonClass" (click)="calculate()" >Calcular</button>
-  </div>
+    <p class="phrase ion-text-center">{{phrase}}</p>
+    <p class="ion-text-center" *ngIf="percente !== -1">{{ percente }}%</p>
+
+    <ion-icon [class]="heartClass" size="large" name="heart"></ion-icon>
+  </form>
 </ion-content>

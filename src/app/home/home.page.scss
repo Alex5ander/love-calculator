@@ -1,8 +1,33 @@
 .container {
     padding: 1rem;
+
+    label {
+        display: block;
+    }
+
+    input {
+        margin: .5rem 0;
+        border-radius: .5rem;
+        padding: 1rem;
+        border: 1px solid rgb(255, 218, 224);
+        outline-color: pink;
+        width: 100%; 
+        
+        &:focus::placeholder {
+            color: transparent;
+        }
+
+        &:invalid {
+            outline-color: red;
+        }
+
+        &:valid {
+            outline-color: green;
+        }
+    }
 }
 
-.animated-button {
+.submit-button {
     width: 300px;
     height: 2rem;
     background-color: rgb(0, 213, 228);
@@ -14,41 +39,69 @@
     align-items:center;
     justify-content: center;
     margin: auto;
-
+    position: relative;
+    z-index: 99999;
     transition: .2s ease-in-out;
+
+    &:disabled {
+        background-color: rgb(183, 250, 255);
+    }
+}
+
+.phrase {
+    
+}
+
+.heart {
+    fill: red;
+    margin: 1rem auto;
+    display: none;
+}
+
+.pulse {
+    display: block;
+    animation: .5s pulse .2s infinite; 
 }
 
 .jump {
     width: 2rem;
     height: 2rem;
-    border-radius: 50%;
     font-size: 0px;
     padding: 0px;
+    border-radius: 50%;
+    transform-origin: bottom;
 
-    animation: .3s infinite .4s jump;
+    animation: .5s infinite .4s jump;
 }
 
 .expand {
     width: 2rem;
     height: 2rem;
-    border-radius: 50%;
     font-size: 0px;
     padding: 0px;
 
-    animation: .4s ease-in-out .4s expand;
+    animation: .5s ease-in-out .4s expand;
 }
 
 @keyframes jump {
-    0% {
+    0%{
+        width: 48px;
+        height: 30px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, .25);
+    }
+
+    50%{
+        width: 32px;
+        height: 32px;
+        transform: translateY(-50px);
+        box-shadow: 0px 50px 10px 1px rgba(0, 0, 0, .1);
+    }
+
+    100%{
+        width: 48px;
+        height: 30px;
         transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-24px);
-    }
-
-    100% {
-        transform: translateX(0px);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, .4);
     }
 }
 
@@ -66,3 +119,16 @@
     }
 }
 
+@keyframes pulse {
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(2);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
