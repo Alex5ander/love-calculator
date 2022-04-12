@@ -39,17 +39,18 @@ export class HomePage {
     this.heartClass = 'heart';
     const { firstName, secondName } = this.formGroup.value;
     this.buttonClass='submit-button jump';
-    // this.http.get(this.url+this.name1+'/'+this.name2).subscribe((response: string) => {
-    //   this.percente = parseInt(response, 10);
-    // });
+    
+    let r = 0;
+    this.http.get(this.url+firstName+'/'+secondName).subscribe((response: string) => {
+      r = parseInt(response, 10);
+    });
 
     setTimeout(() => {
       this.buttonClass='submit-button expand';
       setTimeout(() => {
        this.buttonClass='submit-button';
        this.heartClass='heart pulse';
-
-       this.percente = Math.floor(Math.random() * 101);
+       this.percente = r;
        this.phrase = this.phrases[Math.floor(5 / 100 * this.percente)];
       }, 1400);
     }, 2200);
