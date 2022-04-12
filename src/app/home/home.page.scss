@@ -9,7 +9,7 @@
         margin: .5rem 0;
         border-radius: .5rem;
         padding: 1rem;
-        border: 1px solid rgb(255, 218, 224);
+        border: 1px solid var(--heartcolor);
         outline-color: pink;
         width: 100%; 
         
@@ -30,7 +30,7 @@
 .submit-button {
     width: 300px;
     height: 2rem;
-    background-color: rgb(0, 213, 228);
+    background-color: var(--heartcolor);
     color: #fff;
     font-size: 1rem;
     font-weight: 500;
@@ -44,7 +44,7 @@
     transition: .2s ease-in-out;
 
     &:disabled {
-        background-color: rgb(183, 250, 255);
+        opacity: 0.5;
     }
 }
 
@@ -107,15 +107,15 @@
 
 @keyframes expand {
     0% {
-        box-shadow: 0px 0px 0px 0vw rgb(0, 213, 228);
+        box-shadow: 0px 0px 0px 0vw var(--heartcolor);
     }
 
     50% {
-        box-shadow: 0px 0px 0px 200vw rgb(0, 213, 228);
+        box-shadow: 0px 0px 0px 200vw var(--heartcolor);
     }
 
     100% {
-        box-shadow: 0px 0px 0px 0vw rgb(0, 213, 228);
+        box-shadow: 0px 0px 0px 0vw var(--heartcolor);
     }
 }
 
